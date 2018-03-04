@@ -45,7 +45,7 @@
     "browser-sync": "^2.23.6",
     "dateformat": "^3.0.3",
     "gulp": "github:gulpjs/gulp#6d71a65",
-    "gulp-autoprefixer": "^4.1.0",
+    "gulp-autoprefixer": "^5.0.0",
     "gulp-babel": "^7.0.1",
     "gulp-clean-css": "^3.9.2",
     "gulp-cli": "^2.0.1",
@@ -67,7 +67,7 @@
     "rimraf": "^2.4.3",
     "style-sherpa": "^1.0.0",
     "vinyl-named": "^1.1.0",
-    "webpack": "^3.11.0",
+    "webpack": "^4.0.1",
     "webpack-stream": "^4.0.2",
     "yargs": "^11.0.0"
   }

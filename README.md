@@ -1,80 +1,102 @@
-This is a starter-theme for WordPress based on Zurb's Foundation for Sites 6, the most advanced responsive (mobile-first) framework in the world. The purpose of FoundationPress, is to act as a small and handy toolbox that contains the essentials needed to build any design. FoundationPress is meant to be a starting point, not the final product.
+# KatPress
+
+This is a starter-theme for WordPress based on MDBootstrap, the most advanced responsive (mobile-first) framework in the world. The purpose of KatPress, is to act as a small and handy toolbox that contains the essentials needed to build any design. KatPress is meant to be a starting point, not the final product.
 
 Please fork, copy, modify, delete, share or do whatever you like with this.
 
 All contributions are welcome!
 
-Requirements
-This project requires Node.js v4.x.x to v6.11.x to be installed on your machine. Please be aware that you might encounter problems with the installation if you are using the most current Node version (bleeding edge) with all the latest features.
+## Requirements
 
-FoundationPress uses Sass (CSS with superpowers). In short, Sass is a CSS pre-processor that allows you to write styles more effectively and tidy.
+**This project requires [Node.js](http://nodejs.org) v4.x.x to v6.11.x to be installed on your machine.** Please be aware that you might encounter problems with the installation if you are using the most current Node version (bleeding edge) with all the latest features.
 
-The Sass is compiled using libsass, which requires the GCC to be installed on your machine. Windows users can install it through MinGW, and Mac users can install it through the Xcode Command-line Tools.
+## Quickstart
 
-If you have not worked with a Sass-based workflow before, I would recommend reading FoundationPress for beginners, a short blog post that explains what you need to know.
-
-Quickstart
-1. Clone the repository and install with npm
+### 1. Clone the repository and install with npm
+```bash
 $ cd my-wordpress-folder/wp-content/themes/
-$ git clone https://github.com/olefredrik/FoundationPress.git
+$ git clone https://github.com/tsots/KatPress.git
 $ cd FoundationPress
 $ npm install
-2. Configuration
-YAML config file
-FoundationPress includes a config-default.yml file. To make changes to the configuration, make a copy of config-default.yml and name it config.yml and make changes to that file. The config.yml file is ignored by git so that each environment can use a different configuration with the same git repo.
+```
 
-At the start of the build process a check is done to see if a config.yml file exists. If config.yml exists, the configuration will be loaded from config.yml. If config.yml does not exist, config-default.yml will be used as a fallback.
+### 2. Configuration
 
-Browsersync setup
-If you want to take advantage of Browsersync (automatic browser refresh when a file is saved), simply open your config.yml file after creating it in the previous step, and put your local dev-server address and port (e.g http://localhost:8888) in the url property under the BROWSERSYNC object.
+#### YAML config file
+FoundationPress includes a `config-default.yml` file. To make changes to the configuration, make a copy of `config-default.yml` and name it `config.yml` and make changes to that file. The `config.yml` file is ignored by git so that each environment can use a different configuration with the same git repo.
 
-Static asset hashing / cache breaker
-If you want to make sure your users see the latest changes after re-deploying your theme, you can enable static asset hashing. In your config.yml, set REVISIONING: true;. Hashing will work on the npm run build and npm run dev commands. It will not be applied on the start command with browsersync. This is by design. Hashing will only change if there are actual changes in the files.
+At the start of the build process a check is done to see if a `config.yml` file exists. If `config.yml` exists, the configuration will be loaded from `config.yml`. If `config.yml` does not exist, `config-default.yml` will be used as a fallback.
 
-3. Get started
+#### Browsersync setup
+If you want to take advantage of [Browsersync](https://www.browsersync.io/) (automatic browser refresh when a file is saved), simply open your `config.yml` file after creating it in the previous step, and put your local dev-server address and port (e.g http://localhost:8888) in the `url` property under the `BROWSERSYNC` object.
+
+#### Static asset hashing / cache breaker
+If you want to make sure your users see the latest changes after re-deploying your theme, you can enable static asset hashing. In your `config.yml`, set ``REVISIONING: true;``. Hashing will work on the ``npm run build`` and ``npm run dev`` commands. It will not be applied on the start command with browsersync. This is by design.  Hashing will only change if there are actual changes in the files.
+
+### 3. Get started
+
+```bash
 $ npm start
-4. Compile assets for production
-When building for production, the CSS and JS will be minified. To minify the assets in your /dist folder, run
+```
 
+### 4. Compile assets for production
+
+When building for production, the CSS and JS will be minified. To minify the assets in your `/dist` folder, run
+
+```bash
 $ npm run build
-To create a .zip file of your theme, run:
+```
+
+#### To create a .zip file of your theme, run:
+
+```
 $ npm run package
-Running this command will build and minify the theme's assets and place a .zip archive of the theme in the packaged directory. This excludes the developer files/directories from your theme like /node_modules, /src, etc. to keep the theme lightweight for transferring the theme to a staging or production server.
+```
 
-Project structure
-In the /src folder you will the working files for all your assets. Every time you make a change to a file that is watched by Gulp, the output will be saved to the /dist folder. The contents of this folder is the compiled code that you should not touch (unless you have a good reason for it).
+Running this command will build and minify the theme's assets and place a .zip archive of the theme in the `packaged` directory. This excludes the developer files/directories from your theme like `/node_modules`, `/src`, etc. to keep the theme lightweight for transferring the theme to a staging or production server.
 
-The /page-templates folder contains templates that can be selected in the Pages section of the WordPress admin panel. To create a new page-template, simply create a new file in this folder and make sure to give it a template name.
+### Project structure
+
+In the `/src` folder you will the working files for all your assets. Every time you make a change to a file that is watched by Gulp, the output will be saved to the `/dist` folder. The contents of this folder is the compiled code that you should not touch (unless you have a good reason for it).
+
+The `/page-templates` folder contains templates that can be selected in the Pages section of the WordPress admin panel. To create a new page-template, simply create a new file in this folder and make sure to give it a template name.
 
 I guess the rest is quite self explanatory. Feel free to ask if you feel stuck.
 
-Styles and Sass Compilation
-style.css: Do not worry about this file. (For some reason) it's required by WordPress. All styling are handled in the Sass files described below
+### Styles and Sass Compilation
 
-src/assets/scss/app.scss: Make imports for all your styles here
+ * `style.css`: Do not worry about this file. (For some reason) it's required by WordPress. All styling are handled in the Sass files described below
 
-src/assets/scss/global/*.scss: Global settings
+ * `src/assets/scss/app.scss`: Make imports for all your styles here
+ * `src/assets/scss/global/*.scss`: Global settings
+ * `src/assets/scss/components/*.scss`: Buttons etc.
+ * `src/assets/scss/modules/*.scss`: Topbar, footer etc.
+ * `src/assets/scss/templates/*.scss`: Page template styling
 
-src/assets/scss/components/*.scss: Buttons etc.
+ * `dist/assets/css/app.css`: This file is loaded in the `<head>` section of your document, and contains the compiled styles for your project.
 
-src/assets/scss/modules/*.scss: Topbar, footer etc.
+If you're new to Sass, please note that you need to have Gulp running in the background (``npm start``), for any changes in your scss files to be compiled to `app.css`.
 
-src/assets/scss/templates/*.scss: Page template styling
+### JavaScript Compilation
 
-dist/assets/css/app.css: This file is loaded in the <head> section of your document, and contains the compiled styles for your project.
+All JavaScript files, including Foundation's modules, are imported through the `src/assets/js/app.js` file. The files are imported using module dependency with [webpack](https://webpack.js.org/) as the module bundler.
 
-If you're new to Sass, please note that you need to have Gulp running in the background (npm start), for any changes in your scss files to be compiled to app.css.
+If you're unfamiliar with modules and module bundling, check out [this resource for node style require/exports](http://openmymind.net/2012/2/3/Node-Require-and-Exports/) and [this resource to understand ES6 modules](http://exploringjs.com/es6/ch_modules.html).
 
-JavaScript Compilation
-All JavaScript files, including Foundation's modules, are imported through the src/assets/js/app.js file. The files are imported using module dependency with webpack as the module bundler.
+Foundation modules are loaded in the `src/assets/js/app.js` file. By default all components are loaded. You can also pick and choose which modules to include. Just follow the instructions in the file.
 
-If you're unfamiliar with modules and module bundling, check out this resource for node style require/exports and this resource to understand ES6 modules.
+If you need to output additional JavaScript files separate from `app.js`, do the following:
+* Create new `custom.js` file in `src/assets/js/`. If you will be using jQuery, add `import $ from 'jquery';` at the top of the file.
+* In `config.yml`, add `src/assets/js/custom.js` to `PATHS.entries`.
+* Build (`npm start`)
+* You will now have a `custom.js` file outputted to the `dist/assets/js/` directory.
 
-Foundation modules are loaded in the src/assets/js/app.js file. By default all components are loaded. You can also pick and choose which modules to include. Just follow the instructions in the file.
+## Local Development
+We recommend using one of the following setups for local WordPress development:
 
-If you need to output additional JavaScript files separate from app.js, do the following:
-
-Create new custom.js file in src/assets/js/. If you will be using jQuery, add import $ from 'jquery'; at the top of the file.
-In config.yml, add src/assets/js/custom.js to PATHS.entries.
-Build (npm start)
-You will now have a custom.js file outputted to the dist/assets/js/ directory.
+* [MAMP](https://www.mamp.info/en/) (macOS)
+* [WAMP](http://www.wampserver.com/en/download-wampserver-64bits/) (Windows)
+* [LAMP](https://www.linux.com/learn/easy-lamp-server-installation) (Linux)
+* [Local](https://local.getflywheel.com/) (macOS/Windows)
+* [VVV (Varying Vagrant Vagrants)](https://github.com/Varying-Vagrant-Vagrants/VVV) (Vagrant Box)
+* [Trellis](https://roots.io/trellis/)

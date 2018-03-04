@@ -16,7 +16,7 @@ All contributions are welcome!
 ```bash
 $ cd my-wordpress-folder/wp-content/themes/
 $ git clone https://github.com/tsots/KatPress.git
-$ cd FoundationPress
+$ cd KatPress
 $ npm install
 ```
 

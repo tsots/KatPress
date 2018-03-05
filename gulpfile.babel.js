@@ -12,6 +12,7 @@ import dateFormat    from 'dateformat';
 import webpackStream from 'webpack-stream';
 import webpack2      from 'webpack';
 import named         from 'vinyl-named';
+//var environments = require('gulp-environments');
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
